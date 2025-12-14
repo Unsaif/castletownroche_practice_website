@@ -113,6 +113,11 @@ body {
 .notice-content p {
     color: #78350f;
     font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.notice-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* Appointment Banner - Clean with accent stripe */

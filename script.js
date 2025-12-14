@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (data.notice && data.notice.active) {
         noticeCard.classList.add('active');
         setText('notice-title', data.notice.title);
-        setText('notice-message', data.notice.message);
+        // Use innerHTML for notice message to allow <br> tags
+        const noticeMsg = document.getElementById('notice-message');
+        if (noticeMsg) noticeMsg.innerHTML = data.notice.message;
     }
 
     // Appointment Policy
