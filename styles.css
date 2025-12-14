@@ -1,0 +1,330 @@
+/* 
+ * New Road Surgery - Clean Modern Design
+ * Simple, warm, professional
+ */
+
+:root {
+    --color-primary: #2563eb;
+    --color-accent: #059669;
+
+    --color-bg: #ffffff;
+    --color-bg-alt: #f8fafc;
+    --color-surface: #ffffff;
+
+    --color-text: #1e293b;
+    --color-text-secondary: #64748b;
+
+    --color-border: #e2e8f0;
+    --color-notice: #fef3c7;
+    --color-notice-border: #fcd34d;
+
+    --radius: 8px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    --font: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--color-bg-alt);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Page Layout - Wider container */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px;
+}
+
+/* Header */
+.header {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.header-image {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-content {
+    padding: 28px 32px;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.header-content .address {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+}
+
+/* Notice Banner */
+.notice-banner {
+    display: none;
+    background: var(--color-notice);
+    border: 1px solid var(--color-notice-border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.notice-banner.active {
+    display: flex;
+}
+
+.notice-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.notice-content strong {
+    display: block;
+    color: #92400e;
+    margin-bottom: 4px;
+}
+
+.notice-content p {
+    color: #78350f;
+    font-size: 0.95rem;
+}
+
+/* Appointment Banner - Clean with accent stripe */
+.appointment-banner {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-left: 4px solid #dc2626;
+    color: var(--color-text);
+    padding: 16px 24px;
+    border-radius: var(--radius);
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow);
+}
+
+/* Cards Grid - Wider cards */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.card h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Hours */
+.hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.hours-row:last-child {
+    border-bottom: none;
+}
+
+.hours-row span:first-child {
+    font-weight: 500;
+}
+
+.hours-row span:last-child {
+    color: var(--color-text-secondary);
+}
+
+/* Team */
+.team-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.team-group h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.team-group ul {
+    list-style: none;
+}
+
+.team-group li {
+    padding: 6px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.team-group li:last-child {
+    border-bottom: none;
+}
+
+/* Services - Simple list with bullet points */
+.services-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+}
+
+.services-grid li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.services-grid li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+/* Contact */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1rem;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.contact-row:last-child {
+    border-bottom: none;
+}
+
+a.contact-row:hover {
+    color: var(--color-primary);
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+}
+
+/* Map */
+.map-section {
+    border-radius: var(--radius);
+    overflow: hidden;
+    height: 350px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 28px;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .page-wrapper {
+        padding: 16px;
+    }
+
+    .header-image {
+        height: 200px;
+    }
+
+    .header-content {
+        padding: 20px;
+    }
+
+    .header-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .map-section {
+        height: 250px;
+    }
+
+    .notice-banner {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
