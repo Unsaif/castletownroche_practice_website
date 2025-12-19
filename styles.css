@@ -392,20 +392,21 @@ a.contact-row:hover {
 /* ========== MOBILE RESPONSIVE ========== */
 @media (max-width: 768px) {
     .page-wrapper {
-        padding: 0 16px 16px;
+        padding: 0 8px 16px;
     }
 
-    /* Mobile: Stack layout, no extended background */
+    /* Mobile: Extended background like desktop */
     .hero {
-        margin: 0 -16px 16px;
+        margin: 0 -16px 0;
         padding: 0 16px;
-        min-height: auto;
-        margin-bottom: 0;
+        min-height: 500px;
+        margin-bottom: -300px;
+        /* Extend behind cards on mobile too */
     }
 
     .hero-image {
-        position: relative;
-        height: 180px;
+        position: absolute;
+        height: 100%;
         border-radius: 0;
     }
 
@@ -438,8 +439,22 @@ a.contact-row:hover {
 
     .main-content {
         grid-template-columns: 1fr;
-        gap: 16px;
-        padding-top: 16px;
+        gap: 12px;
+        padding-top: 12px;
+        margin: 12px 12px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .appointment-banner {
+        margin: 16px 12px;
+        padding: 16px 20px;
+    }
+
+    .notice-banner {
+        margin: 0 12px 12px;
     }
 
     .card {
