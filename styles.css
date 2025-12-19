@@ -53,11 +53,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Page Layout */
+/* Page Layout - Full Width */
 .page-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 24px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 0 24px;
 }
 
 /* Hero Section - Extended Background Design */
@@ -90,11 +90,12 @@ body {
     z-index: -1;
 }
 
-/* Banner - Horizontal overlay at top */
+/* Banner - Full width, left title, right button */
 .hero-content {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 40px 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 40px 40px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -157,7 +158,8 @@ body {
     border: 1px solid var(--color-notice-border);
     border-radius: var(--radius);
     padding: 16px 20px;
-    margin-bottom: 16px;
+    margin: 0 40px 16px;
+    /* Side margins */
     align-items: flex-start;
     gap: 12px;
     position: relative;
@@ -200,8 +202,8 @@ body {
     border-radius: var(--radius-sm);
     text-align: left;
     font-weight: 500;
-    margin-bottom: 0;
-    /* No gap to cards below */
+    margin: 0 40px;
+    /* Side margins */
     font-size: 1rem;
     box-shadow: var(--shadow-subtle);
     position: relative;
@@ -213,8 +215,8 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    margin-bottom: 24px;
-    margin-top: 24px;
+    margin: 24px 40px;
+    /* Side margins */
     position: relative;
     z-index: 10;
 }
@@ -267,8 +269,14 @@ body {
 /* Team */
 .team-section {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: row;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.team-group {
+    flex: 1;
+    min-width: 120px;
 }
 
 .team-group h3 {
@@ -357,7 +365,8 @@ a.contact-row:hover {
     border-radius: var(--radius);
     overflow: hidden;
     height: 350px;
-    margin-bottom: 24px;
+    margin: 0 40px 24px;
+    /* Side margins */
     box-shadow: var(--shadow);
 }
 
