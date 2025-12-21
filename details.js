@@ -53,7 +53,7 @@ const details = {
     notice: {
         active: true,
         title: "Flu Clinics & Winter Schedule",
-        message: "<p>Due to increased pressure from flu-related illnesses, we are running extra clinics until February 9th. We will run extra clinics on Mondays, from 5pm to 6pm and Tuesdays, from 5pm to 6pm. Please check this website weekly for updated clinic times.</p><p>Prevention is still the best treatment for the flu. If you have not been vaccinated, please ask for the flu vaccine.</p>"
+        message: "<p>Due to increased pressure from flu-related illnesses, we are running extra clinics until February 9th. We will run extra clinics on Mondays and Tuesdays, from 5pm to 6pm. Please check this website weekly for updated clinic times.</p><p>Prevention is still the best treatment for the flu. If you have not been vaccinated, please ask for the flu vaccine.</p>"
     },
 
     // Appointment Policy
