@@ -80,103 +80,146 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <div class="page-wrapper">
-        <!-- Header / Hero Section -->
-        <header class="hero">
-            <img src="Castletownroche.JPG" alt="New Road Surgery" class="hero-image">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-info">
-                    <h1 id="practice-name">New Road Surgery</h1>
-                    <p id="practice-address" class="hero-address">Loading...</p>
-                </div>
-                <a href="tel:022-26410" class="hero-call-btn">
-                    <span class="call-icon">📞</span>
-                    Call Surgery: 022-26410
-                </a>
-            </div>
-        </header>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-        <!-- Important Notice -->
-        <div class="notice-banner" id="notice-card">
-            <div class="notice-icon">ℹ</div>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <img src="logo.png" alt="" width="44" height="44" class="brand-logo">
+                <span id="practice-name" class="brand-name">New Road Surgery</span>
+            </div>
+            <span id="practice-address" class="header-address">New Rd., Castletownroche, Co. Cork, P51 H79N</span>
+        </div>
+    </header>
+
+    <!-- Important Notice (shown when notice.active is true in details.js) -->
+    <section class="notice" id="notice-card" aria-label="Notice">
+        <div class="container notice-inner">
+            <svg class="notice-icon" aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
             <div class="notice-content">
                 <strong id="notice-title">Notice</strong>
-                <p id="notice-message"></p>
+                <div id="notice-message"></div>
             </div>
         </div>
+    </section>
 
-        <!-- Appointment Banner -->
-        <div class="appointment-banner">
-            <p id="policy-text">Loading...</p>
-        </div>
+    <main id="main">
+        <!-- Call to book + opening hours -->
+        <section class="container hero">
+            <div class="hero-main">
+                <p class="eyebrow">Family GP practice · Castletownroche, Co. Cork</p>
+                <h1>Ring the surgery to book an appointment</h1>
+                <a id="hero-phone-link" href="tel:022-26410" class="call-btn">
+                    <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    <span id="hero-phone-display">022-26410</span>
+                </a>
+                <p id="policy-text" class="policy"></p>
+            </div>
 
-        <!-- Main Content Grid -->
-        <main class="main-content">
-            <!-- Hours Card -->
-            <section class="card">
-                <h2>Opening Hours</h2>
+            <aside class="hours-panel" aria-labelledby="hours-heading">
+                <div class="hours-head">
+                    <h2 id="hours-heading">Opening hours</h2>
+                    <span id="open-status" class="status-pill" hidden></span>
+                </div>
+                <p id="status-detail" class="status-detail" hidden></p>
                 <div id="hours-container" class="hours-list"></div>
-            </section>
-
-            <!-- Team Card -->
-            <section class="card">
-                <h2>Our Team</h2>
-                <div class="team-section">
-                    <div class="team-group">
-                        <h3>Doctors</h3>
-                        <ul id="gps-list"></ul>
-                    </div>
-                    <div class="team-group">
-                        <h3>Nurses</h3>
-                        <ul id="nurses-list"></ul>
-                    </div>
-                    <div class="team-group">
-                        <h3>Administration</h3>
-                        <ul id="secretaries-list"></ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Services Card -->
-            <section class="card">
-                <h2>Services</h2>
-                <ul id="services-list" class="services-grid"></ul>
-            </section>
-
-            <!-- Contact Card -->
-            <section class="card">
-                <h2>Contact</h2>
-                <div class="contact-list">
-                    <a id="phone-link" href="#" class="contact-row">
-                        <span class="contact-icon">📞</span>
-                        <span id="phone-display">Loading...</span>
-                    </a>
-                    <div class="contact-row">
-                        <span class="contact-icon">📠</span>
-                        <span>Fax: <span id="fax-display">Loading...</span></span>
-                    </div>
-                    <a id="email-link" href="#" class="contact-row">
-                        <span class="contact-icon">✉️</span>
-                        <span id="email-display">Loading...</span>
-                    </a>
-                </div>
-            </section>
-        </main>
-
-        <!-- Map -->
-        <section class="map-section">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2459.5!2d-8.4645!3d52.1685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48449f7c8c8c8c8d%3A0x0!2sNew%20Road%2C%20Castletownroche%2C%20Co.%20Cork%2C%20P51%20H79N!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            </aside>
         </section>
-    </div>
+
+        <!-- Services, team, contact -->
+        <section class="band">
+            <div class="container info-grid">
+                <div class="info-col">
+                    <h2>Services</h2>
+                    <ul id="services-list" class="plain-list ruled-list"></ul>
+                </div>
+
+                <div class="info-col">
+                    <h2>Our team</h2>
+                    <div class="team">
+                        <div class="team-group">
+                            <h3>Doctors</h3>
+                            <ul id="gps-list" class="plain-list"></ul>
+                        </div>
+                        <div class="team-group">
+                            <h3>Nurses</h3>
+                            <ul id="nurses-list" class="plain-list"></ul>
+                        </div>
+                        <div class="team-group">
+                            <h3>Administration</h3>
+                            <ul id="secretaries-list" class="plain-list"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-col">
+                    <h2>Contact</h2>
+                    <div class="contact-list">
+                        <div class="contact-row">
+                            <span class="contact-label">Phone</span>
+                            <a id="phone-link" href="tel:022-26410" class="contact-phone"><span
+                                    id="phone-display">022-26410</span></a>
+                        </div>
+                        <div class="contact-row">
+                            <span class="contact-label">Email</span>
+                            <a id="email-link" href="mailto:newroadsurgery@gmail.com"><span
+                                    id="email-display">newroadsurgery@gmail.com</span></a>
+                        </div>
+                        <div class="contact-row">
+                            <span class="contact-label">Fax</span>
+                            <span id="fax-display">022-46984</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Find us -->
+        <section class="container find-us">
+            <div class="find-us-text">
+                <h2>Find us</h2>
+                <p id="find-us-address" class="find-us-address">New Rd., Castletownroche, Co. Cork, P51 H79N</p>
+                <a id="directions-link" class="outline-btn" target="_blank" rel="noopener"
+                    href="https://www.google.com/maps/dir/?api=1&amp;destination=New%20Road%20Surgery%2C%20New%20Rd.%2C%20Castletownroche%2C%20Co.%20Cork%2C%20P51%20H79N">
+                    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Get directions
+                </a>
+            </div>
+            <div class="map">
+                <iframe title="Map showing New Road Surgery, Castletownroche"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2459.5!2d-8.4645!3d52.1685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48449f7c8c8c8c8d%3A0x0!2sNew%20Road%2C%20Castletownroche%2C%20Co.%20Cork%2C%20P51%20H79N!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span><span id="footer-name">New Road Surgery</span>, <span id="footer-address">New Rd., Castletownroche, Co. Cork, P51 H79N</span></span>
+            <span id="footer-phone">022-26410</span>
+        </div>
+    </footer>
 
     <script src="details.js"></script>
     <script src="script.js"></script>
