@@ -506,3 +506,73 @@ h2 {
         display: none;
     }
 }
+
+/* ---------- Village photo behind the first screen ---------- */
+/* The green tint keeps the white text readable; 0.74 is its strength (higher = darker). */
+.hero-backdrop {
+    background:
+        linear-gradient(rgba(16, 35, 28, 0.74), rgba(16, 35, 28, 0.74)),
+        #10231C url('village.jpg') 50% 62% / cover no-repeat;
+}
+
+.hero-backdrop .eyebrow {
+    color: #D6E8DE;
+}
+
+.hero-backdrop h1 {
+    color: #FFFFFF;
+}
+
+.hero-backdrop .call-btn {
+    background: #FFFFFF;
+    color: var(--color-green);
+}
+
+.hero-backdrop .call-btn:hover {
+    background: var(--color-tint);
+    color: var(--color-green-dark);
+}
+
+.hero-backdrop .policy {
+    color: #F1F5F2;
+}
+
+.hero-backdrop .hours-panel {
+    border: 0;
+    background: #FFFFFF;
+}
+
+.hero-backdrop a:focus-visible {
+    outline-color: #FFFFFF;
+}
+
+.hero-backdrop ~ .band {
+    border-top: 0;
+}
+
+/* Browsers don't print backgrounds, so switch the first screen back to dark text on paper */
+@media print {
+    .hero-backdrop {
+        background: none;
+    }
+
+    .hero-backdrop .eyebrow {
+        color: var(--color-green);
+    }
+
+    .hero-backdrop h1 {
+        color: var(--color-ink);
+    }
+
+    .hero-backdrop .policy {
+        color: var(--color-ink-soft);
+    }
+
+    .hero-backdrop .call-btn {
+        border: 2px solid var(--color-green);
+    }
+
+    .hero-backdrop .hours-panel {
+        border: 2px solid var(--color-ink);
+    }
+}
